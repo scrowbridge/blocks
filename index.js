@@ -73,7 +73,7 @@ registerBlockType( 'sc-block/profile', {
 	keywords: [
 	'block',
 	__('profile'),
-	__('review'),
+	__('staff'),
 	'sc'
 	],
 
@@ -90,10 +90,7 @@ registerBlockType( 'sc-block/profile', {
 			source: 'html',
 			selector: '.quote',
 		},
-		stars: {
-			type: 'number',
-			default: 5,
-		},
+
 		imgUrl: {
 			type: 'string',
 			default: 'https://placehold.it/150',

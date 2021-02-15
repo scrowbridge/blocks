@@ -14,7 +14,8 @@ import { __ } from '@wordpress/i18n';
 //import { useBlockProps } from '@wordpress/block-editor';
 //import { RichText } from '@wordpress/block-editor';
 import {useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText } from '@wordpress/block-editor';
-import {SelectControl} from '@wordpress/components';
+import {ColorPicker} from '@wordpress/components';
+import { withState } from '@wordpress/compose';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -41,18 +42,7 @@ export default function edit({attributes, setAttributes}) {
 	//let {attributes, setAttributes} = props;
 	return (
 		<div { ...useBlockProps() }>
-			<SelectControl
-				label={ __( 'Select some rating:' ) }
-				value={ attributes.stars } // e.g: value = [ 'a', 'c' ]
-				onChange={ ( stars ) => { setAttributes( { stars } ) } }
-				options={ [
-					{ value: '1', label: '*' },
-					{ value: '2', label: '**' },
-					{ value: '3', label: '***' },
-					{ value: '4', label: '****' },
-					{ value: '5', label: '*****' },
-				] }
-			/>
+
 			<RichText
 				tagName="h2"
 				value={ attributes.content}
