@@ -60,7 +60,7 @@ registerBlockType( 'sc-block/profile', {
 	 * An icon property should be specified to make it easier to identify a block.
 	 * These can be any of WordPress’ Dashicons, or a custom svg element.
 	 */
-	icon: 'admin-users',
+	icon: 'smiley',
 
 	/**
 	 * Optional block extended support features.
@@ -80,6 +80,11 @@ registerBlockType( 'sc-block/profile', {
 	// these are the data "fields" we want to store with out block
 	//adding the attributes
 	attributes: {
+		content: {
+			type: 'string',
+			source: 'html',
+			selector: '.content',
+		},
 		quote: {
 			type: 'string',
 			source: 'html',
@@ -91,7 +96,7 @@ registerBlockType( 'sc-block/profile', {
 		},
 		imgUrl: {
 			type: 'string',
-			default: 'https://placehold.it/75',
+			default: 'https://placehold.it/150',
 		},
 		author: {
 			type: 'string',
@@ -102,7 +107,7 @@ registerBlockType( 'sc-block/profile', {
 			type: 'string',
 			source: 'text',
 			selector: '.location',
-		}
+		},
 	},
 
 	/**

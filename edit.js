@@ -15,6 +15,7 @@ import { __ } from '@wordpress/i18n';
 //import { RichText } from '@wordpress/block-editor';
 import {useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText } from '@wordpress/block-editor';
 import {SelectControl} from '@wordpress/components';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -52,13 +53,19 @@ export default function edit({attributes, setAttributes}) {
 					{ value: '5', label: '*****' },
 				] }
 			/>
-
+			<RichText
+				tagName="h2"
+				value={ attributes.content}
+				allowedFormats={ ['core/bold']}
+				onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
+				placeholder={ __( 'Title of Position' ) }
+			/>
 			<RichText
 				tagName="div" // The tag here is the element output and editable in the admin
 				value={ attributes.quote } // Any existing content, either from the database or an attribute default
 				allowedFormats={ [ 'core/bold', 'core/italic' ] } // Allow the content to be made bold or italic, but do not allow other formatting options
 				onChange={ ( quote ) => setAttributes( { quote } ) } // Store updated content as a block attribute
-				placeholder="Lorem ipsum...."// Display this text before any content has been added by the user
+				placeholder="Description of Position"// Display this text before any content has been added by the user
 			/>
 
 			<div className="quote-profile">
