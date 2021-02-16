@@ -26,24 +26,18 @@ export default function save( {attributes}) {
 
 	return (
 		<div { ...useBlockProps.save() }>
-
 			<div className="quote-profile">
 				<div className="photo">
 					<img src={attributes.imgUrl} alt={'Photo of _____'}/>
-				</div>
+			</div>
 			<div className="heading">
 				<h2 className="content">{ attributes.content }</h2>
 			</div>
-
 			<RichText.Content tagname="div" className="quote" value={ attributes.quote } />
-
-
 				<div className="text">
 					<p className="author">{attributes.author}</p>
 					<p className="location">{attributes.location}</p>
-
 				</div>
-
 			</div>
 		</div>
 	);

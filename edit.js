@@ -14,8 +14,8 @@ import { __ } from '@wordpress/i18n';
 //import { useBlockProps } from '@wordpress/block-editor';
 //import { RichText } from '@wordpress/block-editor';
 import {useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText } from '@wordpress/block-editor';
-import {ColorPicker} from '@wordpress/components';
-import { withState } from '@wordpress/compose';
+
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,7 +42,6 @@ export default function edit({attributes, setAttributes}) {
 	//let {attributes, setAttributes} = props;
 	return (
 		<div { ...useBlockProps() }>
-
 			<RichText
 				tagName="h2"
 				value={ attributes.content}
@@ -84,7 +83,6 @@ export default function edit({attributes, setAttributes}) {
 						placeholder="City, State"
 					/>
 				</div>
-
 			</div>
 		</div>
 	);
