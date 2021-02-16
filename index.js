@@ -117,7 +117,9 @@ registerBlockType( 'sc-block/profile', {
 		theme: {
 			type: 'string',
 		},
-
+		backgroundColor: {
+			type: 'string',
+		},
 	},
 
 	/**

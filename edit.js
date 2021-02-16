@@ -14,7 +14,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText,
 	InspectorControls} from '@wordpress/block-editor';
-import {SelectControl, PanelBody, PanelRow} from "@wordpress/components";
+import {SelectControl, PanelBody, PanelRow, ColorPalette} from "@wordpress/components";
 
 
 /**
@@ -43,6 +43,7 @@ export default function edit({attributes, setAttributes}) {
 
 	let divStyles = {
 		theme: attributes.theme,
+		backgroundColor: attributes.backgroundColor,
 	}
 
 	return (
@@ -57,6 +58,21 @@ export default function edit({attributes, setAttributes}) {
 							options={ [
 								{value: 'light', label: 'Light Theme'},
 								{value: 'dark', label: 'Dark Theme'},
+							]}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ColorPalette
+							label={__('Background Color')}
+							value={attributes.backgroundColor}
+							onChange={(color) => {setAttributes({backgroundColor: color})}}
+							colors={[
+								{name: 'Blue', color: '#c2fffd'},
+								{name: 'Green', color: '#c2ffcf'},
+								{name: 'Purple', color: '#d2d4fc'},
+								{name: 'Pink', color: '#ffd1e7'},
+								{name: 'Orange', color: '#ffe0c2'},
+								{name: 'Yellow', color: '#feffc2'},
 							]}
 						/>
 					</PanelRow>
