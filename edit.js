@@ -11,10 +11,10 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-//import { useBlockProps } from '@wordpress/block-editor';
-//import { RichText } from '@wordpress/block-editor';
-import {useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText } from '@wordpress/block-editor';
-
+import {
+	useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText,
+	InspectorControls} from '@wordpress/block-editor';
+import {SelectControl, PanelBody, PanelRow} from "@wordpress/components";
 
 
 /**
@@ -41,7 +41,25 @@ export default function edit({attributes, setAttributes}) {
 	//let attributes = props.attributes;
 	//let {attributes, setAttributes} = props;
 	return (
-		<div { ...useBlockProps() }>
+		<div { ...useBlockProps({className:attributes.theme}) }>
+			<InspectorControls>
+				<PanelBody title="Theme" initialOpen={true}>
+					<PanelRow>
+						<SelectControl
+							label={__('Theme')}
+							value={attributes.theme}
+							onChange={ (theme) => { setAttributes({theme} ) } }
+							options={ [
+								{value: 'light', label: 'Light Theme'},
+								{value: 'dark', label: 'Dark Theme'},
+							]}
+						/>
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>
+
+
+
 			<RichText
 				tagName="h2"
 				value={ attributes.content}

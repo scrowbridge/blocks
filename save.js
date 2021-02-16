@@ -25,7 +25,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save( {attributes}) {
 
 	return (
-		<div { ...useBlockProps.save() }>
+		<div { ...useBlockProps.save({className:attributes.theme}) }>
 			<div className="quote-profile">
 				<div className="photo">
 					<img src={attributes.imgUrl} alt={'Photo of _____'}/>

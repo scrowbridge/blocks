@@ -114,6 +114,9 @@ registerBlockType( 'sc-block/profile', {
 			source: 'text',
 			selector: '.hireDate',
 		},
+		theme: {
+			type: 'string',
+		},
 	},
 
 	/**

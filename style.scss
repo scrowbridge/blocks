@@ -18,6 +18,23 @@
 	line-height: 1.5;
   }
 
+  &.dark {
+	background-color: #3e444a;
+	color: #f3f3f3;
+
+	.quote-profile {
+	  background-color: #333;
+	  color: #f3f3f3;
+	}
+	.heading h2 {
+	  color: #e3e3e3;
+	}
+
+	.text textarea {
+	  background-color: #333;
+	}
+  }
+
   .quote-profile {
 	background-color: white;
 	border-radius: 0 0 .5em .5em;
