@@ -73,8 +73,7 @@ export default function edit({attributes, setAttributes}) {
 						onChange={ ( author ) => setAttributes( { author } ) }
 						placeholder="First, Last Name"
 						/>
-				</div>
-				<div className="text">
+
 					<PlainText
 						className="location"
 						value={attributes.location}
