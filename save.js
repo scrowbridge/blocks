@@ -37,7 +37,9 @@ export default function save( {attributes}) {
 			<div className="text">
 				<p className="author">{attributes.author}</p>
 				<p className="location">{attributes.location}</p>
-				<p className="age">{attributes.age} Years Old</p>
+				<p className="age">DOB: {attributes.age}</p>
+				<p className="hireDate">Date Hired: {attributes.hireDate}</p>
+
 			</div>
 			</div>
 		</div>

@@ -108,7 +108,12 @@ registerBlockType( 'sc-block/profile', {
 			type: 'number',
 			source: 'text',
 			selector: '.age',
-		}
+		},
+		hireDate: {
+			type: 'number',
+			source: 'text',
+			selector: '.hireDate',
+		},
 	},
 
 	/**

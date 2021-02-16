@@ -47,7 +47,7 @@ export default function edit({attributes, setAttributes}) {
 				value={ attributes.content}
 				allowedFormats={ ['core/bold']}
 				onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
-				placeholder={ __( 'Title of Position' ) }
+				placeholder="Title of Position"
 			/>
 			<RichText
 				tagName="div" // The tag here is the element output and editable in the admin
@@ -71,7 +71,7 @@ export default function edit({attributes, setAttributes}) {
 						className="author"
 						value={attributes.author}
 						onChange={ ( author ) => setAttributes( { author } ) }
-						placeholder="Meatball Perez"
+						placeholder="First, Last Name"
 						/>
 				</div>
 				<div className="text">
@@ -81,13 +81,18 @@ export default function edit({attributes, setAttributes}) {
 						onChange={ ( location ) => setAttributes( { location } ) }
 						placeholder="City, State"
 					/>
-				</div>
-				<div className="text">
 					<PlainText
 						className="age"
 						value={attributes.age}
 						onChange={ ( age ) => setAttributes( { age } ) }
-						placeholder="35"
+						placeholder="DOB (4/15/2013)"
+						allowedFormats={ [ 'core/bold', 'core/italic' ] }
+					/>
+					<PlainText
+						className="hireDate"
+						value={attributes.hireDate}
+						onChange={ ( hireDate ) => setAttributes( { hireDate } ) }
+						placeholder="Date Hired: 1/1/2015"
 						allowedFormats={ [ 'core/bold', 'core/italic' ] }
 					/>
 				</div>

@@ -12,21 +12,9 @@
   margin: 0 auto;
   background-color: #F3F3F3;
 
-  .stars {
-	text-align: center;
-	font-size: 2em;
-	letter-spacing: .5em;
-	margin-top: .5em;
-	color: gold;
-
-	select {
-	  width: 10em;
-	}
-  }
-
   .quote {
 	width: 100%;
-	padding: 1.5em;
+	padding: 0 2%;
 	line-height: 1.5;
   }
 
@@ -44,22 +32,30 @@
 	  object-fit: cover;
 	  border-radius: 10%;
 	  margin-right: 2em;
-
 	}
 
-	.author, .location, .age {
+	.author, .location, .age, .hireDate {
 	  margin: 0;
 	  text-align: right;
 	  font-weight: 700;
 	}
 
-	.age {
+	.age, .hireDate {
 	  font-weight: 400;
 	  font-size: 0.9em;
 	}
+
 	.location {
 	  font-weight: 300;
 	  font-size: 0.8em;
+	  font-style: italic;
+	}
+
+	.content {
+	  border-right: #ccc solid 1px;
+	  width: 90%;
+	  text-align: center;
+	  color: #383a3d;
 	}
   }
 }
