@@ -41,10 +41,12 @@ export default function edit({attributes, setAttributes}) {
 	//let attributes = props.attributes;
 	//let {attributes, setAttributes} = props;
 
-
+	let divStyles = {
+		theme: attributes.theme,
+	}
 
 	return (
-		<div { ...useBlockProps({className:attributes.theme}) }>
+		<div { ...useBlockProps({style:divStyles}) }>
 			<InspectorControls>
 				<PanelBody title="Theme" initialOpen={true}>
 					<PanelRow>
