@@ -40,6 +40,9 @@ export default function edit({attributes, setAttributes}) {
 //export default function edit(props) {
 	//let attributes = props.attributes;
 	//let {attributes, setAttributes} = props;
+
+
+
 	return (
 		<div { ...useBlockProps({className:attributes.theme}) }>
 			<InspectorControls>
@@ -55,6 +58,7 @@ export default function edit({attributes, setAttributes}) {
 							]}
 						/>
 					</PanelRow>
+
 				</PanelBody>
 			</InspectorControls>
 

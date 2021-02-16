@@ -117,6 +117,7 @@ registerBlockType( 'sc-block/profile', {
 		theme: {
 			type: 'string',
 		},
+
 	},
 
 	/**
