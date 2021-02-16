@@ -104,6 +104,11 @@ registerBlockType( 'sc-block/profile', {
 			source: 'text',
 			selector: '.location',
 		},
+		age: {
+			type: 'number',
+			source: 'text',
+			selector: '.age',
+		}
 	},
 
 	/**

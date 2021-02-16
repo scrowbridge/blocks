@@ -42,19 +42,24 @@
 	  width: 75px;
 	  height: 75px;
 	  object-fit: cover;
-	  border-radius: 50%;
+	  border-radius: 10%;
 	  margin-right: 2em;
+
 	}
 
-	.author, .location {
+	.author, .location, .age {
 	  margin: 0;
 	  text-align: right;
 	  font-weight: 700;
 	}
 
+	.age {
+	  font-weight: 400;
+	  font-size: 0.9em;
+	}
 	.location {
 	  font-weight: 300;
-	  font-size: 0.7em;
+	  font-size: 0.8em;
 	}
   }
 }

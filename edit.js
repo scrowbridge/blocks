@@ -56,7 +56,6 @@ export default function edit({attributes, setAttributes}) {
 				onChange={ ( quote ) => setAttributes( { quote } ) } // Store updated content as a block attribute
 				placeholder="Description of Position"// Display this text before any content has been added by the user
 			/>
-
 			<div className="quote-profile">
 				<div className="photo">
 					<MediaUploadCheck>
@@ -81,6 +80,15 @@ export default function edit({attributes, setAttributes}) {
 						value={attributes.location}
 						onChange={ ( location ) => setAttributes( { location } ) }
 						placeholder="City, State"
+					/>
+				</div>
+				<div className="text">
+					<PlainText
+						className="age"
+						value={attributes.age}
+						onChange={ ( age ) => setAttributes( { age } ) }
+						placeholder="35"
+						allowedFormats={ [ 'core/bold', 'core/italic' ] }
 					/>
 				</div>
 			</div>

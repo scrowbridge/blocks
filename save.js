@@ -34,10 +34,11 @@ export default function save( {attributes}) {
 				<h2 className="content">{ attributes.content }</h2>
 			</div>
 			<RichText.Content tagname="div" className="quote" value={ attributes.quote } />
-				<div className="text">
-					<p className="author">{attributes.author}</p>
-					<p className="location">{attributes.location}</p>
-				</div>
+			<div className="text">
+				<p className="author">{attributes.author}</p>
+				<p className="location">{attributes.location}</p>
+				<p className="age">{attributes.age} Years Old</p>
+			</div>
 			</div>
 		</div>
 	);
