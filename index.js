@@ -120,6 +120,9 @@ registerBlockType( 'sc-block/profile', {
 		backgroundColor: {
 			type: 'string',
 		},
+		textColor: {
+			type: 'string',
+		},
 	},
 
 	/**

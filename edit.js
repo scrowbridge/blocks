@@ -14,7 +14,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText,
 	InspectorControls} from '@wordpress/block-editor';
-import {SelectControl, PanelBody, PanelRow, ColorPalette} from "@wordpress/components";
+import {PanelBody, PanelRow, ColorPalette, SelectControl} from "@wordpress/components";
 
 
 /**
@@ -44,12 +44,13 @@ export default function edit({attributes, setAttributes}) {
 	let divStyles = {
 		theme: attributes.theme,
 		backgroundColor: attributes.backgroundColor,
+		color: attributes.textColor,
 	}
 
 	return (
 		<div { ...useBlockProps({style:divStyles}) }>
 			<InspectorControls>
-				<PanelBody title="Theme" initialOpen={true}>
+				<PanelBody title="Customization" initialOpen={true}>
 					<PanelRow>
 						<SelectControl
 							label={__('Theme')}
@@ -62,6 +63,23 @@ export default function edit({attributes, setAttributes}) {
 						/>
 					</PanelRow>
 					<PanelRow>
+						<p>Text Color</p>
+						<ColorPalette
+							label={__('Text Color')}
+							value={attributes.textColor}
+							onChange={(color) => {setAttributes({textColor: color})}}
+							colors={[
+								{name: 'Black', color: '#000000'},
+								{name: 'Brown', color: '#362700'},
+								{name: 'Navy', color: '#01223b'},
+								{name: 'Red', color: '#3b0c01'},
+								{name: 'Grey', color: '#636363'},
+								{name: 'White', color: '#ffffff'},
+							]}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<p>Background Color</p>
 						<ColorPalette
 							label={__('Background Color')}
 							value={attributes.backgroundColor}
