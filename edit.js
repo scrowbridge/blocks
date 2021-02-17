@@ -14,7 +14,8 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText,
 	InspectorControls} from '@wordpress/block-editor';
-import {PanelBody, PanelRow, ColorPalette, SelectControl} from "@wordpress/components";
+import {PanelBody, PanelRow, ColorPalette, SelectControl, AnglePickerControl, FontSizePicker} from "@wordpress/components";
+import { withState } from '@wordpress/compose';
 
 
 /**
@@ -45,7 +46,10 @@ export default function edit({attributes, setAttributes}) {
 		theme: attributes.themeColor,
 		backgroundColor: attributes.backgroundColor,
 		color: attributes.textColor,
+		angle: attributes.setAngle,
+		font: attributes.fontSize,
 	}
+
 
 	return (
 		<div { ...useBlockProps({style:divStyles}) }>
@@ -61,6 +65,18 @@ export default function edit({attributes, setAttributes}) {
 								{value: 'dark', label: 'Dark Theme'},
 							]}
 						/>
+					</PanelRow>
+					<PanelRow>
+						<FontSizePicker
+							fontSizes={[
+								{name: __( 'Small' ),slug: 'small',size: 12, },
+								{ name: __( 'Big' ), slug: 'big', size: 26,},
+    						]}
+							value={ attributes.fontSize }
+							onChange={ ( font ) => {setAttributes( { fontSize: font } );
+							} }
+						/>
+
 					</PanelRow>
 					<PanelRow>
 						<p>Text Color</p>
@@ -94,8 +110,17 @@ export default function edit({attributes, setAttributes}) {
 							]}
 						/>
 					</PanelRow>
+					<PanelRow>
+						<p>Angle Picker</p>
+						<AnglePickerControl
+							value={ attributes.setAngle }
+							onChange={(angle) =>{ setAttributes({setAngle: angle})} }
+						/>
+				</PanelRow>
 				</PanelBody>
 			</InspectorControls>
+
+
 
 			<RichText
 				tagName="h2"
@@ -104,6 +129,7 @@ export default function edit({attributes, setAttributes}) {
 				onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
 				placeholder="Title of Position"
 			/>
+
 			<RichText
 				tagName="div" // The tag here is the element output and editable in the admin
 				value={ attributes.quote } // Any existing content, either from the database or an attribute default

@@ -123,6 +123,12 @@ registerBlockType( 'sc-block/profile', {
 		textColor: {
 			type: 'string',
 		},
+		setAngle: {
+			type: 'string',
+		},
+		fontSize: {
+			type: 'string',
+		},
 	},
 
 	/**

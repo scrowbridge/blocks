@@ -28,13 +28,15 @@ export default function save( {attributes}) {
 		theme: attributes.themeColor,
 		backgroundColor: attributes.backgroundColor,
 		color: attributes.textColor,
+		angle: attributes.setAngle,
+		font: attributes.fontSize,
 	}
 
 	return (
 		<div { ...useBlockProps.save({style:divStyles}) }>
 			<div className="quote-profile">
 				<div className="photo">
-					<img src={attributes.imgUrl} alt={'Photo of _____'}/>
+					img src={attributes.imgUrl} alt={'Photo of _____'} />
 			</div>
 			<div className="heading">
 				<h2 className="content">{ attributes.content }</h2>
