@@ -8,9 +8,10 @@
 .wp-block-sc-block-profile {
   border: .1em solid #aaaaaa;
   border-radius: .5em;
-  color: black;
   margin: 5px auto;
-  background-color: #F3F3F3;
+
+
+
 
   .quote {
 	width: 100%;
@@ -18,31 +19,29 @@
 	line-height: 1.5;
   }
 
-  &.dark {
-	background-color: #3e444a;
-	color: #f3f3f3;
-
-	.quote-profile {
-	  background-color: #333;
-	  color: #f3f3f3;
-	}
-	.heading h2 {
-	  color: #e3e3e3;
-	}
-
-	.text textarea {
-	  background-color: #333;
-	}
-  }
-
-
   .quote-profile {
-	background-color: white;
 	border-radius: 0 0 .5em .5em;
 	padding: 2em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	&.dark {
+	  background-color: #3e444a;
+	  color: #f3f3f3;
+
+	  .quote-profile {
+		background-color: #333;
+		color: #f3f3f3;
+	  }
+	  .heading h2 {
+		color: #e3e3e3;
+	  }
+
+	  .text textarea {
+		background-color: #333;
+	  }
+	}
 
 	.photo img {
 	  width: 75px;
@@ -76,7 +75,8 @@
 	  border-right: #ccc solid 1px;
 	  width: 90%;
 	  text-align: center;
-	  color: #383a3d;
 	}
+
+
   }
 }

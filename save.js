@@ -25,7 +25,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save( {attributes}) {
 
 	let divStyles = {
-		theme: attributes.theme,
+		theme: attributes.themeColor,
 		backgroundColor: attributes.backgroundColor,
 		color: attributes.textColor,
 	}

@@ -42,7 +42,7 @@ export default function edit({attributes, setAttributes}) {
 	//let {attributes, setAttributes} = props;
 
 	let divStyles = {
-		theme: attributes.theme,
+		theme: attributes.themeColor,
 		backgroundColor: attributes.backgroundColor,
 		color: attributes.textColor,
 	}
@@ -50,12 +50,12 @@ export default function edit({attributes, setAttributes}) {
 	return (
 		<div { ...useBlockProps({style:divStyles}) }>
 			<InspectorControls>
-				<PanelBody title="Customization" initialOpen={true}>
+				<PanelBody title="Customization" initialOpen={open}>
 					<PanelRow>
 						<SelectControl
 							label={__('Theme')}
-							value={attributes.theme}
-							onChange={ (theme) => { setAttributes({theme} ) } }
+							value={attributes.themeColor}
+							onChange={ (theme) => { setAttributes({themeColor: theme} ) } }
 							options={ [
 								{value: 'light', label: 'Light Theme'},
 								{value: 'dark', label: 'Dark Theme'},
@@ -94,11 +94,8 @@ export default function edit({attributes, setAttributes}) {
 							]}
 						/>
 					</PanelRow>
-
 				</PanelBody>
 			</InspectorControls>
-
-
 
 			<RichText
 				tagName="h2"

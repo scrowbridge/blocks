@@ -48,7 +48,7 @@ registerBlockType( 'sc-block/profile', {
 	 * This is a short description for your block, can be translated with `i18n` functions.
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
-	description: __('A collection of editors blocks', 'sc-block'),
+	description: __('The Staff Profile', 'sc-block'),
 
 	/**
 	 * Blocks are grouped into categories to help users browse and discover them.
@@ -114,7 +114,7 @@ registerBlockType( 'sc-block/profile', {
 			source: 'text',
 			selector: '.hireDate',
 		},
-		theme: {
+		themeColor: {
 			type: 'string',
 		},
 		backgroundColor: {
